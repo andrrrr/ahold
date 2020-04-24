@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "closure #1 in static RemoteFetchService.fetchData(success:):RemoteFetchService.swift">
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in closure #3 in ContentView.link(for:):ContentView.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ImageViewContainer.body.getter:ContentView.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "Image(uiImage: (remoteImageURL.data.isEmpty) ? UIImage(imageLiteralResourceName: &quot;Swift&quot;) : UIImage(data: remoteImageURL.data)!)">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "static RemoteFetchService.fetchData(success:):RemoteFetchService.swift">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

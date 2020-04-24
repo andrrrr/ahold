@@ -9,6 +9,7 @@
 import SwiftUI
 import Combine
 
+
 struct ContentView: View {
 
     @EnvironmentObject var artObjectStore: ArtObjectStore
@@ -66,17 +67,39 @@ struct ContentView: View {
 }
 
 struct ImageViewContainer: View {
-    @ObjectBinding var remoteImageURL: RemoteImageURL
+    @ObservedObject var remoteImageURL: RemoteImageURL
 
     init(imageURL: String) {
         remoteImageURL = RemoteImageURL(imageURL: imageURL)
     }
 
     var body: some View {
-        Image(uiImage: (remoteImageURL.data.isEmpty) ? UIImage(imageLiteralResourceName: "Switf") : UIImage(data: remoteImageURL.data)!)
+        Image(uiImage: (remoteImageURL.data.isEmpty) ? UIImage(imageLiteralResourceName: "Swift") : UIImage(data: remoteImageURL.data)!)
             .resizable()
             .aspectRatio(contentMode: .fit)
             .frame(width: 250, height: 250)
+    }
+}
+
+class RemoteImageURL: ObservableObject {
+    var didChange = PassthroughSubject<Data, Never>()
+
+    var data = Data() {
+        didSet {
+            didChange.send(data)
+        }
+    }
+
+    init(imageURL: String) {
+        guard let url = URL(string: imageURL) else { return }
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            guard let data = data else { return }
+
+            DispatchQueue.main.async {
+                self.data = data
+            }
+
+        }.resume()
     }
 }
 
