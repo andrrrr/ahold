@@ -17,6 +17,7 @@
 		476CF86B2452F39E003DE016 /* ArtObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476CF86A2452F39E003DE016 /* ArtObject.swift */; };
 		476CF86D2452F670003DE016 /* ArtObjectStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476CF86C2452F670003DE016 /* ArtObjectStore.swift */; };
 		476CF86F24537096003DE016 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476CF86E24537096003DE016 /* DetailView.swift */; };
+		476CF8712454C4BD003DE016 /* ImageContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476CF8702454C4BD003DE016 /* ImageContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		476CF86A2452F39E003DE016 /* ArtObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtObject.swift; sourceTree = "<group>"; };
 		476CF86C2452F670003DE016 /* ArtObjectStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtObjectStore.swift; sourceTree = "<group>"; };
 		476CF86E24537096003DE016 /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		476CF8702454C4BD003DE016 /* ImageContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				476CF8542452E750003DE016 /* AppDelegate.swift */,
 				476CF8562452E750003DE016 /* SceneDelegate.swift */,
 				476CF8582452E750003DE016 /* ContentView.swift */,
+				476CF8702454C4BD003DE016 /* ImageContainer.swift */,
 				476CF8682452F2F2003DE016 /* RemoteFetchService.swift */,
 				476CF86C2452F670003DE016 /* ArtObjectStore.swift */,
 				476CF86A2452F39E003DE016 /* ArtObject.swift */,
@@ -163,6 +166,7 @@
 				476CF86D2452F670003DE016 /* ArtObjectStore.swift in Sources */,
 				476CF86F24537096003DE016 /* DetailView.swift in Sources */,
 				476CF8572452E750003DE016 /* SceneDelegate.swift in Sources */,
+				476CF8712454C4BD003DE016 /* ImageContainer.swift in Sources */,
 				476CF8692452F2F2003DE016 /* RemoteFetchService.swift in Sources */,
 				476CF8592452E750003DE016 /* ContentView.swift in Sources */,
 			);

@@ -12,7 +12,7 @@
          contextName = "ImageViewContainer.body.getter:ContentView.swift">
          <PersistentStrings>
             <PersistentString
-               value = "Image(uiImage: (remoteImageURL.data.isEmpty) ? UIImage(imageLiteralResourceName: &quot;Swift&quot;) : UIImage(data: remoteImageURL.data)!)">
+               value = "remoteImageURL.data.isEmpty">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

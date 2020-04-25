@@ -7,8 +7,6 @@
 //
 
 import SwiftUI
-import Combine
-
 
 struct ContentView: View {
 
@@ -56,8 +54,9 @@ struct ContentView: View {
                 self.tappedLink = $0
         })
         return NavigationLink(destination: DetailView(artObject: artObject), tag: artObject.title, selection: selection) {
-            HStack(alignment: .bottom) {
+            HStack(alignment: .top) {
                 Text("\(artObject.title)").font(.footnote).foregroundColor(.gray)
+                Spacer()
                 ImageViewContainer(imageURL: artObject.webImage.url)
             }
         }
@@ -66,42 +65,7 @@ struct ContentView: View {
 
 }
 
-struct ImageViewContainer: View {
-    @ObservedObject var remoteImageURL: RemoteImageURL
 
-    init(imageURL: String) {
-        remoteImageURL = RemoteImageURL(imageURL: imageURL)
-    }
-
-    var body: some View {
-        Image(uiImage: (remoteImageURL.data.isEmpty) ? UIImage(imageLiteralResourceName: "Swift") : UIImage(data: remoteImageURL.data)!)
-            .resizable()
-            .aspectRatio(contentMode: .fit)
-            .frame(width: 250, height: 250)
-    }
-}
-
-class RemoteImageURL: ObservableObject {
-    var didChange = PassthroughSubject<Data, Never>()
-
-    var data = Data() {
-        didSet {
-            didChange.send(data)
-        }
-    }
-
-    init(imageURL: String) {
-        guard let url = URL(string: imageURL) else { return }
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-            guard let data = data else { return }
-
-            DispatchQueue.main.async {
-                self.data = data
-            }
-
-        }.resume()
-    }
-}
 
 extension UIApplication {
     func endEditing() {
