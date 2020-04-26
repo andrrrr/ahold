@@ -10,7 +10,7 @@ import Foundation
 
 class RemoteFetchService {
 
-    static let key = "0fiuZFh4"
+    static private let key = "0fiuZFh4"
 
     static func fetchData(page: Int, success: @escaping ([ArtObject]) -> Void) {
         let url = URL(string: "https://www.rijksmuseum.nl/api/en/collection?key=\(key)&p=\(page)&ps=20")!

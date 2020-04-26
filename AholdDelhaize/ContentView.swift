@@ -27,7 +27,7 @@ struct ContentView: View {
 
                         }
                         Button(action: loadMore) {
-                            Text("")
+                            Text("Loading more...")
                         }
                         .onAppear {
                             DispatchQueue.global(qos: .background).asyncAfter(deadline: DispatchTime(uptimeNanoseconds: 10)) {
@@ -65,7 +65,7 @@ struct ContentView: View {
                 }
                 Spacer()
                 AsyncImage(
-                    url: URL(string: artObject.headerImage.url)!,
+                    url: URL(string: artObject.headerImage.url.replacingOccurrences(of: "=s0", with: ""))!,
                     cache: self.cache,
                     width: 200,
                     height: 50

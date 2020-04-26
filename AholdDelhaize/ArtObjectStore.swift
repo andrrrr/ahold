@@ -11,6 +11,7 @@ import Combine
 
 class ArtObjectStore: ObservableObject {
 
+
     @Published private(set) var artObjects: [ArtObject] = []
 
     init() {

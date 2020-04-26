@@ -12,19 +12,13 @@ import Foundation
 
 class ImageLoader: ObservableObject {
 
-    let objectWillChange = ObservableObjectPublisher()
+    private(set) var isLoading = false
+    private static let imageProcessingQueue = DispatchQueue(label: "image-processing")
 
     private var cancellable: AnyCancellable?
-    @Published var image: UIImage? {
-        willSet {
-            print("image set")
-//            objectWillChange.send()
-        }
-    }
-
+    @Published var image: UIImage?
 
     private let url: URL
-
     private var cache: ImageCache?
 
     init(url: URL, cache: ImageCache? = nil) {
@@ -41,35 +35,34 @@ class ImageLoader: ObservableObject {
     }
 
     func load() {
+        guard !isLoading else { return }
+
         if let image = cache?[url] {
             self.image = image
             return
         }
 
-//        cancellable = URLSession.shared.dataTaskPublisher(for: url)
-//            .map { UIImage(data: $0.data) }
-//            .receive(on: DispatchQueue.main)
-//            .replaceError(with: nil)
-//            .sink(receiveValue: { [weak self] in self?.cache($0) })
-
-//        cancellable = URLSession.shared.dataTaskPublisher(for: url)
-//            .map { UIImage(data: $0.data) }
-//            .receive(on: DispatchQueue.main)
-//            .replaceError(with: nil)
-//            .sink(receiveValue: { image in
-//                self.cache(image)
-//            })
-
-
         cancellable = URLSession.shared.dataTaskPublisher(for: url)
+            .subscribe(on: Self.imageProcessingQueue)
             .map { UIImage(data: $0.data) }
             .replaceError(with: nil)
-            .handleEvents(receiveOutput: { [weak self] in self?.cache($0) })
+            .handleEvents(receiveSubscription: { [weak self] _ in self?.onStart() },
+                          receiveOutput: { [weak self] in self?.cache($0) },
+                          receiveCompletion: { [weak self] _ in self?.onFinish() },
+                          receiveCancel: { [weak self] in self?.onFinish() })
             .receive(on: DispatchQueue.main)
             .assign(to: \.image, on: self)
 
-
     }
+
+    private func onStart() {
+        isLoading = true
+    }
+
+    private func onFinish() {
+        isLoading = false
+    }
+
 
     func cancel() {
         cancellable?.cancel()
@@ -87,6 +80,7 @@ struct AsyncImage: View {
         loader = ImageLoader(url: url, cache: cache)
         self.width = width
         self.height = height
+        loader.load()
     }
 
     var body: some View {
@@ -96,7 +90,7 @@ struct AsyncImage: View {
     }
 
     private var image: some View {
-        Group {
+        VStack {
             if loader.image != nil {
                 Image(uiImage: loader.image!)
                     .resizable()
