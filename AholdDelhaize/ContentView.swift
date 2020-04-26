@@ -27,7 +27,7 @@ struct ContentView: View {
 
                         }
                         Button(action: loadMore) {
-                            Text("Loading more...")
+                            Text("Loading more...").font(.system(size: 9)).foregroundColor(.gray)
                         }
                         .onAppear {
                             DispatchQueue.global(qos: .background).asyncAfter(deadline: DispatchTime(uptimeNanoseconds: 10)) {

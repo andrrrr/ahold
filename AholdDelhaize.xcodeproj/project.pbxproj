@@ -18,7 +18,18 @@
 		476CF86D2452F670003DE016 /* ArtObjectStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476CF86C2452F670003DE016 /* ArtObjectStore.swift */; };
 		476CF86F24537096003DE016 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476CF86E24537096003DE016 /* DetailView.swift */; };
 		476CF8712454C4BD003DE016 /* ImageContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476CF8702454C4BD003DE016 /* ImageContainer.swift */; };
+		476CF87924562358003DE016 /* AholdDelhaizeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476CF87824562358003DE016 /* AholdDelhaizeTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		476CF87B24562358003DE016 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 476CF8492452E750003DE016 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 476CF8502452E750003DE016;
+			remoteInfo = AholdDelhaize;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		476CF8512452E750003DE016 /* AholdDelhaize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AholdDelhaize.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -34,10 +45,20 @@
 		476CF86C2452F670003DE016 /* ArtObjectStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtObjectStore.swift; sourceTree = "<group>"; };
 		476CF86E24537096003DE016 /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		476CF8702454C4BD003DE016 /* ImageContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageContainer.swift; sourceTree = "<group>"; };
+		476CF87624562358003DE016 /* AholdDelhaizeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AholdDelhaizeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		476CF87824562358003DE016 /* AholdDelhaizeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AholdDelhaizeTests.swift; sourceTree = "<group>"; };
+		476CF87A24562358003DE016 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		476CF84E2452E750003DE016 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		476CF87324562358003DE016 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -51,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				476CF8532452E750003DE016 /* AholdDelhaize */,
+				476CF87724562358003DE016 /* AholdDelhaizeTests */,
 				476CF8522452E750003DE016 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -59,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				476CF8512452E750003DE016 /* AholdDelhaize.app */,
+				476CF87624562358003DE016 /* AholdDelhaizeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -90,6 +113,15 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		476CF87724562358003DE016 /* AholdDelhaizeTests */ = {
+			isa = PBXGroup;
+			children = (
+				476CF87824562358003DE016 /* AholdDelhaizeTests.swift */,
+				476CF87A24562358003DE016 /* Info.plist */,
+			);
+			path = AholdDelhaizeTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -110,6 +142,24 @@
 			productReference = 476CF8512452E750003DE016 /* AholdDelhaize.app */;
 			productType = "com.apple.product-type.application";
 		};
+		476CF87524562358003DE016 /* AholdDelhaizeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 476CF87D24562358003DE016 /* Build configuration list for PBXNativeTarget "AholdDelhaizeTests" */;
+			buildPhases = (
+				476CF87224562358003DE016 /* Sources */,
+				476CF87324562358003DE016 /* Frameworks */,
+				476CF87424562358003DE016 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				476CF87C24562358003DE016 /* PBXTargetDependency */,
+			);
+			name = AholdDelhaizeTests;
+			productName = AholdDelhaizeTests;
+			productReference = 476CF87624562358003DE016 /* AholdDelhaizeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -122,6 +172,10 @@
 				TargetAttributes = {
 					476CF8502452E750003DE016 = {
 						CreatedOnToolsVersion = 11.4.1;
+					};
+					476CF87524562358003DE016 = {
+						CreatedOnToolsVersion = 11.4.1;
+						TestTargetID = 476CF8502452E750003DE016;
 					};
 				};
 			};
@@ -139,6 +193,7 @@
 			projectRoot = "";
 			targets = (
 				476CF8502452E750003DE016 /* AholdDelhaize */,
+				476CF87524562358003DE016 /* AholdDelhaizeTests */,
 			);
 		};
 /* End PBXProject section */
@@ -151,6 +206,13 @@
 				476CF8612452E751003DE016 /* LaunchScreen.storyboard in Resources */,
 				476CF85E2452E751003DE016 /* Preview Assets.xcassets in Resources */,
 				476CF85B2452E751003DE016 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		476CF87424562358003DE016 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,7 +234,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		476CF87224562358003DE016 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				476CF87924562358003DE016 /* AholdDelhaizeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		476CF87C24562358003DE016 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 476CF8502452E750003DE016 /* AholdDelhaize */;
+			targetProxy = 476CF87B24562358003DE016 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		476CF85F2452E751003DE016 /* LaunchScreen.storyboard */ = {
@@ -346,6 +424,46 @@
 			};
 			name = Release;
 		};
+		476CF87E24562358003DE016 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MVMQPVN965;
+				INFOPLIST_FILE = AholdDelhaizeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = me.nevar.andrei.AholdDelhaizeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AholdDelhaize.app/AholdDelhaize";
+			};
+			name = Debug;
+		};
+		476CF87F24562358003DE016 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MVMQPVN965;
+				INFOPLIST_FILE = AholdDelhaizeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = me.nevar.andrei.AholdDelhaizeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AholdDelhaize.app/AholdDelhaize";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -363,6 +481,15 @@
 			buildConfigurations = (
 				476CF8662452E751003DE016 /* Debug */,
 				476CF8672452E751003DE016 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		476CF87D24562358003DE016 /* Build configuration list for PBXNativeTarget "AholdDelhaizeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				476CF87E24562358003DE016 /* Debug */,
+				476CF87F24562358003DE016 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

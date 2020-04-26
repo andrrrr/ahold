@@ -52,7 +52,6 @@ class ImageLoader: ObservableObject {
                           receiveCancel: { [weak self] in self?.onFinish() })
             .receive(on: DispatchQueue.main)
             .assign(to: \.image, on: self)
-
     }
 
     private func onStart() {
@@ -80,7 +79,7 @@ struct AsyncImage: View {
         loader = ImageLoader(url: url, cache: cache)
         self.width = width
         self.height = height
-        loader.load()
+        loader.load() // NOTE: it's supposed to work without this, but doesn't
     }
 
     var body: some View {

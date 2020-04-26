@@ -9,12 +9,23 @@
          contextName = "closure #1 in closure #3 in ContentView.link(for:):ContentView.swift">
       </ContextState>
       <ContextState
+         contextName = "ImageLoader.load():ImageContainer.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "isLoading">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "ImageViewContainer.body.getter:ContentView.swift">
          <PersistentStrings>
             <PersistentString
                value = "remoteImageURL.data.isEmpty">
             </PersistentString>
          </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in AsyncImage.image.getter:ImageContainer.swift">
       </ContextState>
       <ContextState
          contextName = "static RemoteFetchService.fetchData(success:):RemoteFetchService.swift">
