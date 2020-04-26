@@ -21,7 +21,6 @@ struct DetailView: View {
 
                 AsyncImage(
                     url: URL(string: artObject.webImage.url)!,
-                    placeholder: Text("Loading image...").font(.footnote).foregroundColor(.gray),
                     cache: self.cache
                 )
                 Text(artObject.longTitle).font(.system(size: 12)).foregroundColor(.gray)

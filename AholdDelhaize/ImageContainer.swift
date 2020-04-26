@@ -11,8 +11,17 @@ import Combine
 import Foundation
 
 class ImageLoader: ObservableObject {
+
+    let objectWillChange = ObservableObjectPublisher()
+
     private var cancellable: AnyCancellable?
-    @Published var image: UIImage?
+    @Published var image: UIImage? {
+        willSet {
+            print("image set")
+//            objectWillChange.send()
+        }
+    }
+
 
     private let url: URL
 
@@ -27,11 +36,30 @@ class ImageLoader: ObservableObject {
         cancellable?.cancel()
     }
 
+    private func cache(_ image: UIImage?) {
+        image.map { cache?[url] = $0 }
+    }
+
     func load() {
         if let image = cache?[url] {
             self.image = image
             return
         }
+
+//        cancellable = URLSession.shared.dataTaskPublisher(for: url)
+//            .map { UIImage(data: $0.data) }
+//            .receive(on: DispatchQueue.main)
+//            .replaceError(with: nil)
+//            .sink(receiveValue: { [weak self] in self?.cache($0) })
+
+//        cancellable = URLSession.shared.dataTaskPublisher(for: url)
+//            .map { UIImage(data: $0.data) }
+//            .receive(on: DispatchQueue.main)
+//            .replaceError(with: nil)
+//            .sink(receiveValue: { image in
+//                self.cache(image)
+//            })
+
 
         cancellable = URLSession.shared.dataTaskPublisher(for: url)
             .map { UIImage(data: $0.data) }
@@ -39,10 +67,8 @@ class ImageLoader: ObservableObject {
             .handleEvents(receiveOutput: { [weak self] in self?.cache($0) })
             .receive(on: DispatchQueue.main)
             .assign(to: \.image, on: self)
-    }
 
-    private func cache(_ image: UIImage?) {
-        image.map { cache?[url] = $0 }
+
     }
 
     func cancel() {
@@ -51,22 +77,16 @@ class ImageLoader: ObservableObject {
 }
 
 
-struct AsyncImage<Placeholder: View>: View {
+struct AsyncImage: View {
     @ObservedObject private var loader: ImageLoader
-    private let placeholder: Placeholder?
     private let width: CGFloat?
     private let height: CGFloat?
     @State var spin = false
-    
 
-
-    init(url: URL, placeholder: Placeholder? = nil, cache: ImageCache? = nil, width: CGFloat? = nil, height: CGFloat? = nil) {
+    init(url: URL, cache: ImageCache? = nil, width: CGFloat? = nil, height: CGFloat? = nil) {
         loader = ImageLoader(url: url, cache: cache)
-        self.placeholder = placeholder
         self.width = width
         self.height = height
-
-
     }
 
     var body: some View {

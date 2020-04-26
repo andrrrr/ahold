@@ -55,7 +55,9 @@ struct ContentView: View {
                 self.tappedLink = $0
         })
 
-        return NavigationLink(destination: DetailView(artObject: artObject, cache: self.cache), tag: artObject.id, selection: selection) {
+        return NavigationLink(destination: DetailView(artObject: artObject, cache: self.cache),
+                              tag: artObject.id,
+                              selection: selection) {
             HStack(alignment: .center) {
                 VStack(alignment: .leading){
                     Text("\(artObject.title)").font(.system(size: 12))
@@ -64,7 +66,6 @@ struct ContentView: View {
                 Spacer()
                 AsyncImage(
                     url: URL(string: artObject.headerImage.url)!,
-                    placeholder: Text("Loading ...").font(.footnote).foregroundColor(.gray),
                     cache: self.cache,
                     width: 200,
                     height: 50
