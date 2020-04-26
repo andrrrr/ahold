@@ -11,7 +11,7 @@ import SwiftUI
 struct ContentView: View {
 
     @EnvironmentObject var artObjectStore: ArtObjectStore
-    @State private var pageCount = 0
+    @State private var pageCount = 1
     @State private var tappedLink: String? = nil
 
     var body: some View {
@@ -43,8 +43,8 @@ struct ContentView: View {
     }
 
     func loadMore() {
-        artObjectStore.loadMore(pageCount)
         pageCount += 1
+        artObjectStore.loadMore(pageCount)
     }
 
     private func link(for artObject: ArtObject) -> some View {
@@ -53,6 +53,7 @@ struct ContentView: View {
                 UIApplication.shared.endEditing()
                 self.tappedLink = $0
         })
+        //print(artObject.title)
         return NavigationLink(destination: DetailView(artObject: artObject), tag: artObject.title, selection: selection) {
             HStack(alignment: .top) {
                 Text("\(artObject.title)").font(.footnote).foregroundColor(.gray)
@@ -61,10 +62,7 @@ struct ContentView: View {
             }
         }
     }
-
-
 }
-
 
 
 extension UIApplication {

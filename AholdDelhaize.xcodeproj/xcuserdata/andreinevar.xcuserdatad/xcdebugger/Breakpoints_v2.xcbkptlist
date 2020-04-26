@@ -7,16 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "802089B5-B4C0-4CB2-AE89-06A2A15A02A1"
+            uuid = "02AC85E3-C25A-4733-939D-E29A03557211"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "AholdDelhaize/ContentView.swift"
+            filePath = "AholdDelhaize/ArtObjectStore.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
-            landmarkName = "link(for:)"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "loadMore(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

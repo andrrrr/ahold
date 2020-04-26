@@ -34,21 +34,6 @@ class RemoteFetchService {
             } catch {
                 print(error)
             }
-
-            //            if let data = data {
-            //                let artObjects = try? JSONDecoder().decode([ArtObject].self, from: data)
-            //                print(data)
-            //            }
-            //
-            //            if let data = data,
-            //              let artObjects = try? JSONDecoder().decode([ArtObject].self, from: data) {
-            //              success(artObjects)
-            //            }
-
-            //          if let data = data,
-            //            let artObjects = try? JSONDecoder().decode([ArtObject].self, from: data) {
-            //            success(artObjects)
-            //          }
         })
         task.resume()
     }

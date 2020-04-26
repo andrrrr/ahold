@@ -15,10 +15,11 @@ class ArtObjectStore: ObservableObject {
 
 
     init() {
-        loadMore(0)
+        loadMore(1)
     }
 
     func loadMore(_ page: Int) {
+        print("load \(page)")
         RemoteFetchService.fetchData(page: page, success: { artObjects in
             DispatchQueue.main.async {
                 self.artObjects += artObjects

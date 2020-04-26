@@ -17,7 +17,7 @@ struct ImageViewContainer: View {
     }
 
     var body: some View {
-        Image(uiImage: (remoteImageURL.data.isEmpty) ? UIImage(imageLiteralResourceName: "Swift") : UIImage(data: remoteImageURL.data)!)
+        Image(uiImage: (remoteImageURL.data.isEmpty) ? UIImage() : UIImage(data: remoteImageURL.data)!)
             .resizable()
             .aspectRatio(contentMode: .fit)
             .frame(width: 100, height: 100)
@@ -45,3 +45,24 @@ class RemoteImageURL: ObservableObject {
         }.resume()
     }
 }
+
+//OPTION 2
+
+class ImageLoader: ObservableObject {
+    @Published var dataIsValid = false
+    var data:Data?
+
+    init(urlString:String) {
+        guard let url = URL(string: urlString) else { return }
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            guard let data = data else { return }
+            DispatchQueue.main.async {
+                self.dataIsValid = true
+                self.data = data
+            }
+        }
+        task.resume()
+    }
+}
+
+
