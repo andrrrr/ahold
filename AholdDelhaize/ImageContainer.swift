@@ -53,10 +53,15 @@ class ImageLoader: ObservableObject {
 struct AsyncImage<Placeholder: View>: View {
     @ObservedObject private var loader: ImageLoader
     private let placeholder: Placeholder?
+    private let width: CGFloat?
+    private let height: CGFloat?
 
-    init(url: URL, placeholder: Placeholder? = nil, cache: ImageCache? = nil) {
+
+    init(url: URL, placeholder: Placeholder? = nil, cache: ImageCache? = nil, width: CGFloat, height: CGFloat) {
         loader = ImageLoader(url: url, cache: cache)
         self.placeholder = placeholder
+        self.width = width
+        self.height = height
     }
 
     var body: some View {
@@ -71,7 +76,7 @@ struct AsyncImage<Placeholder: View>: View {
                 Image(uiImage: loader.image!)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: 200, height: 50)
+                    .frame(width: width, height: height)
             } else {
                 placeholder
             }

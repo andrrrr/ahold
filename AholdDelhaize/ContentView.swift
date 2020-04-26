@@ -54,8 +54,8 @@ struct ContentView: View {
                 UIApplication.shared.endEditing()
                 self.tappedLink = $0
         })
-        
-        return NavigationLink(destination: DetailView(artObject: artObject), tag: artObject.title, selection: selection) {
+
+        return NavigationLink(destination: DetailView(artObject: artObject, cache: self.cache), tag: artObject.title, selection: selection) {
             HStack(alignment: .center) {
                 VStack(alignment: .leading){
                     Text("\(artObject.title)").font(.system(size: 12))
@@ -65,7 +65,9 @@ struct ContentView: View {
                 AsyncImage(
                     url: URL(string: artObject.headerImage.url)!,
                     placeholder: Text("Loading ...").font(.footnote).foregroundColor(.gray),
-                    cache: self.cache
+                    cache: self.cache,
+                    width: 200,
+                    height: 50
                 )
                 
             }
