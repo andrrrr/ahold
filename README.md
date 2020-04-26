@@ -1,12 +1,3 @@
-Programming assessment: 
-
-As part of the hiring process, we would like mobile developers to do a little programming assessment. 
-
-To structure this a bit, we have the following requirements: 
-
- 
-  
-
 Use the Dutch Rijksmuseum API, see documentation here: https://data.rijksmuseum.nl/object-metadata/api/
 
 API - RijksData
