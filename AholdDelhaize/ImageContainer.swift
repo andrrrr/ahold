@@ -13,6 +13,7 @@ import Foundation
 class ImageLoader: ObservableObject {
     private var cancellable: AnyCancellable?
     @Published var image: UIImage?
+
     private let url: URL
 
     private var cache: ImageCache?
@@ -55,6 +56,8 @@ struct AsyncImage<Placeholder: View>: View {
     private let placeholder: Placeholder?
     private let width: CGFloat?
     private let height: CGFloat?
+    @State var spin = false
+    
 
 
     init(url: URL, placeholder: Placeholder? = nil, cache: ImageCache? = nil, width: CGFloat? = nil, height: CGFloat? = nil) {
@@ -62,6 +65,8 @@ struct AsyncImage<Placeholder: View>: View {
         self.placeholder = placeholder
         self.width = width
         self.height = height
+
+
     }
 
     var body: some View {
@@ -78,7 +83,14 @@ struct AsyncImage<Placeholder: View>: View {
                     .aspectRatio(contentMode: .fit)
                     .frame(width: width, height: height)
             } else {
-                placeholder
+                Image("loadingCircle")
+                    .resizable()
+                    .frame(width: 20, height: 20)
+                    .rotationEffect(.degrees(spin ? 360 : 0))
+                    .animation(Animation.linear(duration: 0.8).repeatForever(autoreverses: false))
+                    .onAppear() {
+                        self.spin.toggle()
+                }
             }
         }
     }
