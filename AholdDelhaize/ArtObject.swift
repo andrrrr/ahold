@@ -23,6 +23,7 @@ struct ArtObject: Decodable, Hashable {
     var showImage: Bool
     var permitDownload: Bool
     var webImage: WebImage
+    var headerImage: HeaderImage
 
     static func == (lhs: ArtObject, rhs: ArtObject) -> Bool {
         return lhs.id == rhs.id && lhs.objectNumber == rhs.objectNumber
@@ -38,6 +39,19 @@ struct WebImage: Decodable, Hashable {
     var url: String
 
     static func == (lhs: WebImage, rhs: WebImage) -> Bool {
+        return lhs.guid == rhs.guid
+    }
+}
+
+struct HeaderImage: Decodable, Hashable {
+    var guid: String
+    var offsetPercentageX: Int
+    var offsetPercentageY: Int
+    var width: Int
+    var height: Int
+    var url: String
+
+    static func == (lhs: HeaderImage, rhs: HeaderImage) -> Bool {
         return lhs.guid == rhs.guid
     }
 }

@@ -13,6 +13,7 @@ struct ContentView: View {
     @EnvironmentObject var artObjectStore: ArtObjectStore
     @State private var pageCount = 1
     @State private var tappedLink: String? = nil
+    @Environment(\.imageCache) var cache: ImageCache
 
     var body: some View {
         NavigationView {
@@ -53,12 +54,20 @@ struct ContentView: View {
                 UIApplication.shared.endEditing()
                 self.tappedLink = $0
         })
-        //print(artObject.title)
+        
         return NavigationLink(destination: DetailView(artObject: artObject), tag: artObject.title, selection: selection) {
-            HStack(alignment: .top) {
-                Text("\(artObject.title)").font(.footnote).foregroundColor(.gray)
+            HStack(alignment: .center) {
+                VStack(alignment: .leading){
+                    Text("\(artObject.title)").font(.system(size: 12))
+                    Text("\(artObject.principalOrFirstMaker)").font(.system(size: 9)).foregroundColor(.gray)
+                }
                 Spacer()
-                ImageViewContainer(imageURL: artObject.webImage.url)
+                AsyncImage(
+                    url: URL(string: artObject.headerImage.url)!,
+                    placeholder: Text("Loading ...").font(.footnote).foregroundColor(.gray),
+                    cache: self.cache
+                )
+                
             }
         }
     }
