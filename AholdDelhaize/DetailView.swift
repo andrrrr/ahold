@@ -22,14 +22,20 @@ struct DetailView: View {
                 AsyncImage(
                     url: URL(string: artObject.webImage.url)!,
                     placeholder: Text("Loading image...").font(.footnote).foregroundColor(.gray),
-                    cache: self.cache,
-                    width: 400,
-                    height: 400
+                    cache: self.cache
                 )
+                Text(artObject.longTitle).font(.system(size: 12)).foregroundColor(.gray)
+                if !artObject.productionPlaces.isEmpty {
+                    Text(" ")
+                    Text("Production places: ").font(.system(size: 12)).foregroundColor(.gray)
+                    ForEach(artObject.productionPlaces, id: \.self) { place in
+                        Text(place).font(.system(size: 12)).foregroundColor(.gray)
+                    }
+                }
                 Spacer()
 
             }
-            Text(artObject.title)
+
         }
     }
 }

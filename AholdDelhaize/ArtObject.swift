@@ -24,6 +24,7 @@ struct ArtObject: Decodable, Hashable {
     var permitDownload: Bool
     var webImage: WebImage
     var headerImage: HeaderImage
+    var productionPlaces: [String]
 
     static func == (lhs: ArtObject, rhs: ArtObject) -> Bool {
         return lhs.id == rhs.id && lhs.objectNumber == rhs.objectNumber

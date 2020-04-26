@@ -57,7 +57,7 @@ struct AsyncImage<Placeholder: View>: View {
     private let height: CGFloat?
 
 
-    init(url: URL, placeholder: Placeholder? = nil, cache: ImageCache? = nil, width: CGFloat, height: CGFloat) {
+    init(url: URL, placeholder: Placeholder? = nil, cache: ImageCache? = nil, width: CGFloat? = nil, height: CGFloat? = nil) {
         loader = ImageLoader(url: url, cache: cache)
         self.placeholder = placeholder
         self.width = width
