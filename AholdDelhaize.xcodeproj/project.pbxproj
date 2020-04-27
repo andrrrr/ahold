@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		475089002456D59F007A6BC4 /* MockTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475088FF2456D59F007A6BC4 /* MockTask.swift */; };
+		475089002456D59F007A6BC4 /* Mocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475088FF2456D59F007A6BC4 /* Mocks.swift */; };
 		475089052456DE44007A6BC4 /* TestingSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475089042456DE44007A6BC4 /* TestingSceneDelegate.swift */; };
 		475089072456DE54007A6BC4 /* TestingAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475089062456DE54007A6BC4 /* TestingAppDelegate.swift */; };
 		475089092456DE5A007A6BC4 /* TestingRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475089082456DE5A007A6BC4 /* TestingRootViewController.swift */; };
@@ -38,7 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		475088FF2456D59F007A6BC4 /* MockTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTask.swift; sourceTree = "<group>"; };
+		475088FF2456D59F007A6BC4 /* Mocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mocks.swift; sourceTree = "<group>"; };
 		475089042456DE44007A6BC4 /* TestingSceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestingSceneDelegate.swift; sourceTree = "<group>"; };
 		475089062456DE54007A6BC4 /* TestingAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestingAppDelegate.swift; sourceTree = "<group>"; };
 		475089082456DE5A007A6BC4 /* TestingRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestingRootViewController.swift; sourceTree = "<group>"; };
@@ -132,7 +132,7 @@
 				475089042456DE44007A6BC4 /* TestingSceneDelegate.swift */,
 				475089082456DE5A007A6BC4 /* TestingRootViewController.swift */,
 				475089062456DE54007A6BC4 /* TestingAppDelegate.swift */,
-				475088FF2456D59F007A6BC4 /* MockTask.swift */,
+				475088FF2456D59F007A6BC4 /* Mocks.swift */,
 				476CF87A24562358003DE016 /* Info.plist */,
 			);
 			path = AholdDelhaizeTests;
@@ -258,7 +258,7 @@
 				475089072456DE54007A6BC4 /* TestingAppDelegate.swift in Sources */,
 				475089052456DE44007A6BC4 /* TestingSceneDelegate.swift in Sources */,
 				475089132456FD4B007A6BC4 /* HttpClient.swift in Sources */,
-				475089002456D59F007A6BC4 /* MockTask.swift in Sources */,
+				475089002456D59F007A6BC4 /* Mocks.swift in Sources */,
 				476CF87924562358003DE016 /* AholdDelhaizeTests.swift in Sources */,
 				475089092456DE5A007A6BC4 /* TestingRootViewController.swift in Sources */,
 			);
