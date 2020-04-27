@@ -1,15 +1,15 @@
 //
-//  SceneDelegate.swift
-//  AholdDelhaize
+//  TestingSceneDelegate.swift
+//  BackbaseAssignment
 //
-//  Created by Andrei Nevar on 24/04/2020.
+//  Created by Andrei Nevar on 21/04/2020.
 //  Copyright © 2020 Andrei Nevar. All rights reserved.
 //
 
 import UIKit
 import SwiftUI
 
-class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+class TestingSceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
@@ -19,16 +19,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let windowScene = scene as? UIWindowScene {
 
             let window = UIWindow(windowScene: windowScene)
-            let session = URLSession.shared
-            let store = ArtObjectStore(session: session)
             window.rootViewController = UIHostingController(
-                rootView: ContentView().environmentObject(store)
+                rootView: TestingRootViewController()
             )
             self.window = window
             window.makeKeyAndVisible()
         }
     }
-
-
 }
+
 

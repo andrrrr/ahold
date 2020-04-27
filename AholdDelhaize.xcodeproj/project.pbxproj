@@ -7,13 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		475089002456D59F007A6BC4 /* MockTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475088FF2456D59F007A6BC4 /* MockTask.swift */; };
+		475089052456DE44007A6BC4 /* TestingSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475089042456DE44007A6BC4 /* TestingSceneDelegate.swift */; };
+		475089072456DE54007A6BC4 /* TestingAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475089062456DE54007A6BC4 /* TestingAppDelegate.swift */; };
+		475089092456DE5A007A6BC4 /* TestingRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475089082456DE5A007A6BC4 /* TestingRootViewController.swift */; };
+		4750890B2456DE67007A6BC4 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4750890A2456DE67007A6BC4 /* main.swift */; };
+		475089132456FD4B007A6BC4 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476CF8682452F2F2003DE016 /* HttpClient.swift */; };
 		476CF8552452E750003DE016 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476CF8542452E750003DE016 /* AppDelegate.swift */; };
 		476CF8572452E750003DE016 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476CF8562452E750003DE016 /* SceneDelegate.swift */; };
 		476CF8592452E750003DE016 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476CF8582452E750003DE016 /* ContentView.swift */; };
 		476CF85B2452E751003DE016 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 476CF85A2452E751003DE016 /* Assets.xcassets */; };
 		476CF85E2452E751003DE016 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 476CF85D2452E751003DE016 /* Preview Assets.xcassets */; };
 		476CF8612452E751003DE016 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 476CF85F2452E751003DE016 /* LaunchScreen.storyboard */; };
-		476CF8692452F2F2003DE016 /* RemoteFetchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476CF8682452F2F2003DE016 /* RemoteFetchService.swift */; };
+		476CF8692452F2F2003DE016 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476CF8682452F2F2003DE016 /* HttpClient.swift */; };
 		476CF86B2452F39E003DE016 /* ArtObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476CF86A2452F39E003DE016 /* ArtObject.swift */; };
 		476CF86D2452F670003DE016 /* ArtObjectStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476CF86C2452F670003DE016 /* ArtObjectStore.swift */; };
 		476CF86F24537096003DE016 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476CF86E24537096003DE016 /* DetailView.swift */; };
@@ -32,6 +38,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		475088FF2456D59F007A6BC4 /* MockTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockTask.swift; sourceTree = "<group>"; };
+		475089042456DE44007A6BC4 /* TestingSceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestingSceneDelegate.swift; sourceTree = "<group>"; };
+		475089062456DE54007A6BC4 /* TestingAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestingAppDelegate.swift; sourceTree = "<group>"; };
+		475089082456DE5A007A6BC4 /* TestingRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestingRootViewController.swift; sourceTree = "<group>"; };
+		4750890A2456DE67007A6BC4 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		476CF8512452E750003DE016 /* AholdDelhaize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AholdDelhaize.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		476CF8542452E750003DE016 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		476CF8562452E750003DE016 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -40,7 +51,7 @@
 		476CF85D2452E751003DE016 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		476CF8602452E751003DE016 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		476CF8622452E751003DE016 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		476CF8682452F2F2003DE016 /* RemoteFetchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFetchService.swift; sourceTree = "<group>"; };
+		476CF8682452F2F2003DE016 /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 		476CF86A2452F39E003DE016 /* ArtObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtObject.swift; sourceTree = "<group>"; };
 		476CF86C2452F670003DE016 /* ArtObjectStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtObjectStore.swift; sourceTree = "<group>"; };
 		476CF86E24537096003DE016 /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
@@ -89,11 +100,12 @@
 		476CF8532452E750003DE016 /* AholdDelhaize */ = {
 			isa = PBXGroup;
 			children = (
+				4750890A2456DE67007A6BC4 /* main.swift */,
 				476CF8542452E750003DE016 /* AppDelegate.swift */,
 				476CF8562452E750003DE016 /* SceneDelegate.swift */,
 				476CF8582452E750003DE016 /* ContentView.swift */,
 				476CF8702454C4BD003DE016 /* ImageContainer.swift */,
-				476CF8682452F2F2003DE016 /* RemoteFetchService.swift */,
+				476CF8682452F2F2003DE016 /* HttpClient.swift */,
 				476CF86C2452F670003DE016 /* ArtObjectStore.swift */,
 				476CF86A2452F39E003DE016 /* ArtObject.swift */,
 				476CF86E24537096003DE016 /* DetailView.swift */,
@@ -117,6 +129,10 @@
 			isa = PBXGroup;
 			children = (
 				476CF87824562358003DE016 /* AholdDelhaizeTests.swift */,
+				475089042456DE44007A6BC4 /* TestingSceneDelegate.swift */,
+				475089082456DE5A007A6BC4 /* TestingRootViewController.swift */,
+				475089062456DE54007A6BC4 /* TestingAppDelegate.swift */,
+				475088FF2456D59F007A6BC4 /* MockTask.swift */,
 				476CF87A24562358003DE016 /* Info.plist */,
 			);
 			path = AholdDelhaizeTests;
@@ -225,11 +241,12 @@
 			files = (
 				476CF8552452E750003DE016 /* AppDelegate.swift in Sources */,
 				476CF86B2452F39E003DE016 /* ArtObject.swift in Sources */,
+				4750890B2456DE67007A6BC4 /* main.swift in Sources */,
 				476CF86D2452F670003DE016 /* ArtObjectStore.swift in Sources */,
 				476CF86F24537096003DE016 /* DetailView.swift in Sources */,
 				476CF8572452E750003DE016 /* SceneDelegate.swift in Sources */,
 				476CF8712454C4BD003DE016 /* ImageContainer.swift in Sources */,
-				476CF8692452F2F2003DE016 /* RemoteFetchService.swift in Sources */,
+				476CF8692452F2F2003DE016 /* HttpClient.swift in Sources */,
 				476CF8592452E750003DE016 /* ContentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -238,7 +255,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				475089072456DE54007A6BC4 /* TestingAppDelegate.swift in Sources */,
+				475089052456DE44007A6BC4 /* TestingSceneDelegate.swift in Sources */,
+				475089132456FD4B007A6BC4 /* HttpClient.swift in Sources */,
+				475089002456D59F007A6BC4 /* MockTask.swift in Sources */,
 				476CF87924562358003DE016 /* AholdDelhaizeTests.swift in Sources */,
+				475089092456DE5A007A6BC4 /* TestingRootViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
